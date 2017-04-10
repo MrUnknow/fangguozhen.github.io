@@ -10,7 +10,7 @@
     
     <title>
         
-            hexo图片上传 | 
+            理解js中的this | 
         
         方国桢的博客
     </title>
@@ -48,7 +48,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://guozhen93.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="hexo图片上传 | 方国桢的博客">
+    <meta property="og:title" content="理解js中的this | 方国桢的博客">
     <meta property="og:description" content="fangguozhen&#39;s blogs">
 
     <!--[if lte IE 9]>
@@ -221,7 +221,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
-        
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#二、函数中的this。"><span class="post-toc-number">1.</span> <span class="post-toc-text">二、函数中的this。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#三、使用call，apply显示指定this"><span class="post-toc-number">2.</span> <span class="post-toc-text">三、使用call，apply显示指定this</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#四、构造函数与原型方法上的this"><span class="post-toc-number">3.</span> <span class="post-toc-text">四、构造函数与原型方法上的this</span></a></li></ol>
 
         <!--
         <li class="mdl-menu__item">
@@ -251,7 +251,7 @@
         
     
             <p class="article-headline-p">
-                hexo图片上传
+                理解js中的this
             </p>
         </div>
 
@@ -270,7 +270,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>方国桢</strong>
-        <span>3月 30, 2017</span>
+        <span>4月 10, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -310,7 +310,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=hexo图片上传&url=http://guozhen93.com//2017/03/30/hexo图片上传/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=理解js中的this&url=http://guozhen93.com//2017/04/10/理解js中的this/index.html&pic=&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -319,7 +319,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=hexo图片上传&url=http://guozhen93.com//2017/03/30/hexo图片上传/index.html&via=方国桢" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=理解js中的this&url=http://guozhen93.com//2017/04/10/理解js中的this/index.html&via=方国桢" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -328,7 +328,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://guozhen93.com//2017/03/30/hexo图片上传/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://guozhen93.com//2017/04/10/理解js中的this/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -337,7 +337,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://guozhen93.com//2017/03/30/hexo图片上传/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://guozhen93.com//2017/04/10/理解js中的this/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -349,7 +349,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=方国桢的博客&title=hexo图片上传&summary=fangguozhen&#39;s blogs&pics=http://guozhen93.com/img/favicon.png&url=http://guozhen93.com/2017/03/30/hexo图片上传/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=方国桢的博客&title=理解js中的this&summary=fangguozhen&#39;s blogs&pics=http://guozhen93.com/img/favicon.png&url=http://guozhen93.com/2017/04/10/理解js中的this/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -367,17 +367,46 @@
                 <!-- Post Content -->
                 <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>用hexo写博客时，图片上传是一个问题，网上也给出了一些处理办法，常用的是使用七牛等平台来存储图片。但是有时候遇到大量图片处理的时候就比较麻烦，首先要将图片上传至七牛服务器在使用。后来试着搜索了本地方式引用，发现了github上有一款插件来加载本地图片。</p>
-<p><a href="https://github.com/CodeFalling/hexo-asset-image" target="_blank" rel="external">CodeFalling/hexo-asset-image</a></p>
-<p>1.首先确认<code>_config.yml</code> 中有 <code>post_asset_folder:true</code>。<br>Hexo 提供了一种更方便管理 Asset 的设定：<code>post_asset_folder</code><br>当您设置<code>post_asset_folder</code>为<code>true</code>参数后，在建立文件时，<code>Hexo</code><br>会自动建立一个与文章同名的文件夹，您可以把与该文章相关的所有资源都放到那个文件夹，如此一来，您便可以更方便的使用资源。</p>
-<p>2.在hexo的目录下执行<code>npm install https://github.com/CodeFalling/hexo-asset-image --save</code>（需要等待一段时间）。</p>
-<p>3.完成安装后用<code>hexo</code>新建文章的时候会发现<code>_posts</code>目录下面会多出一个和文章名字一样的文件夹。</p>
-<p>比如当你git命令创建一篇新文章：</p>
-<p><code>$ hexo new &quot;hexo图片上传&quot;</code></p>
-<p>那么在_posts目录下就产生了一个hexo图片上传的文件夹，图片就可以存放在此文件夹下,目录结构如下:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">hexo图片上传</div><div class="line">├── apppicker.jpg</div><div class="line">├── logo.jpg</div><div class="line">└── rules.jpg</div><div class="line">hexo图片上传.md</div></pre></td></tr></table></figure>
-<p>这样的目录结构（目录名和文章名一致），只要使用 <code>![logo](本地图片测试/logo.jpg)</code> 就可以插入图片。其中<code>[]</code>里面不写文字则没有图片标题。</p>
-<p>通过此种方式需要同步图片的时候就不需要将图片上传至服务器在使用了，可以将图片直接存放在本地引用。是不是方便了很多？</p>
+        <p>在全面理解this之前，我们先来看一张图简单了解一下执行上下文。</p>
+<p><img src="/2017/04/10/理解js中的this/content.png" alt="logo"></p>
+<p>在执行上下文的创建阶段，会分别生成变量对象，建立作用域链，确定this指向。</p>
+<p>在这里，我们得出一个非常重要的结论，<strong>this的指向，是在函数被调用的时候确定的。</strong>也就是执行上下文被创建时确定的。因此我们可以很容易就能理解到，一个函数中的this指向，可以是非常灵活的。比如下面的例子中，同一个函数由于调用方式的不同，this指向了不一样的对象。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var a = 10;</div><div class="line">var obj = &#123;</div><div class="line">    a: 20</div><div class="line">&#125;</div><div class="line"></div><div class="line">function fn () &#123;</div><div class="line">    console.log(this.a);</div><div class="line">&#125;</div><div class="line"></div><div class="line">fn(); // 10</div><div class="line">fn.call(obj); // 20</div></pre></td></tr></table></figure>
+<p>除此之外，<strong>在函数执行过程中，this一旦被确定，就不可更改了。</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var a = 10;</div><div class="line">var obj = &#123;</div><div class="line">    a: 20</div><div class="line">&#125;</div><div class="line"></div><div class="line">function fn () &#123;</div><div class="line">    this = obj; // 这句话试图修改this，运行后会报错</div><div class="line">    console.log(this.a);</div><div class="line">&#125;</div><div class="line"></div><div class="line">fn();</div></pre></td></tr></table></figure>
+<p><strong>一、全局对象中的this</strong></p>
+<p>关于全局对象的this，我之前在总结变量对象的时候提到过，它是一个比较特殊的存在。全局环境中的this，指向它本身。因此，这也相对简单，没有那么多复杂的情况需要考虑。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">// 通过this绑定到全局对象</div><div class="line">this.a2 = 20;</div><div class="line"></div><div class="line">// 通过声明绑定到变量对象，但在全局环境中，变量对象就是它自身</div><div class="line">var a1 = 10;</div><div class="line"></div><div class="line">// 仅仅只有赋值操作，标识符会隐式绑定到全局对象</div><div class="line">a3 = 30;</div><div class="line"></div><div class="line">// 输出结果会全部符合预期</div><div class="line">console.log(a1);</div><div class="line">console.log(a2);</div><div class="line">console.log(a3);</div></pre></td></tr></table></figure>
+<h5 id="二、函数中的this。"><a href="#二、函数中的this。" class="headerlink" title="二、函数中的this。"></a>二、函数中的this。</h5><p>请看以下一个例子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var a = 20;</div><div class="line">function fn() &#123;</div><div class="line">    console.log(this.a);</div><div class="line">&#125;</div><div class="line">fn();</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var a = 20;</div><div class="line">function fn() &#123;</div><div class="line">    function foo() &#123;</div><div class="line">        console.log(this.a);</div><div class="line">    &#125;</div><div class="line">    foo();</div><div class="line">&#125;</div><div class="line">fn();</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var a = 20;</div><div class="line">var obj = &#123;</div><div class="line">    a: 10,</div><div class="line">    c: this.a + 20,</div><div class="line">    fn: function () &#123;</div><div class="line">        return this.a;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">console.log(obj.c);</div><div class="line">console.log(obj.fn());</div></pre></td></tr></table></figure>
+<p>通过以上几个例子，我们可以在一个函数上下文中，this由调用者提供，由调用函数的方式来决定。<strong>如果调用者函数，被某一个对象所拥有，那么该函数在调用时，内部的this指向该对象。如果函数独立调用，那么该函数内部的this，则指向undefined</strong>。但是在非严格模式中，当this指向undefined时，它会被自动指向全局对象。</p>
+<p>从结论中我们可以看出，想要准确确定this指向，找到函数的调用者以及区分他是否是独立调用就变得十分关键。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function fn() &#123;</div><div class="line">    &apos;use strict&apos;;</div><div class="line">    console.log(this);</div><div class="line">&#125;</div><div class="line"></div><div class="line">fn();  // fn是调用者，独立调用</div><div class="line">window.fn();  // fn是调用者，被window所拥有</div></pre></td></tr></table></figure>
+<p>在上面的简单例子中，<code>fn()</code>作为独立调用者，按照定义的理解，它内部的this指向就为undefined。而<code>window.fn()</code>则因为fn被window所拥有，内部的this就指向了window对象。</p>
+<p>那么掌握了这个规则，现在回过头去看看上面的三个例子，通过添加/去除严格模式，那么你就会发现，原来this已经变得不那么虚无缥缈，已经有迹可循了。</p>
+<p>但是我们需要特别注意的是demo03。在demo03中，对象obj中的c属性使用<code>this.a + 20</code>来计算，而他的调用者<code>obj.c</code>并非是一个函数。因此他不适用于上面的规则，我们要对这种方式单独下一个结论。</p>
+<p><strong>当obj在全局声明时，无论obj.c在什么地方调用，这里的this都指向全局对象，而当obj在函数环境中声明时，这个this指向undefined，在非严格模式下，会自动转向全局对象。</strong>可运行下面的例子查看区别。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&apos;use strict&apos;;</div><div class="line">var a = 20;</div><div class="line">function foo () &#123;</div><div class="line">    var a = 1;</div><div class="line">    var obj = &#123;</div><div class="line">        a: 10, </div><div class="line">        c: this.a + 20,</div><div class="line">        fn: function () &#123;</div><div class="line">            return this.a;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return obj.c;</div><div class="line"></div><div class="line">&#125;</div><div class="line">console.log(foo()); // 运行会报错</div></pre></td></tr></table></figure>
+<h5 id="三、使用call，apply显示指定this"><a href="#三、使用call，apply显示指定this" class="headerlink" title="三、使用call，apply显示指定this"></a>三、使用call，apply显示指定this</h5><p>JavaScript内部提供了一种机制，让我们可以自行手动设置this的指向。它们就是call与apply。所有的函数都具有着两个方法。它们除了参数略有不同，其功能完全一样。它们的第一个参数都为this将要指向的对象。</p>
+<p>如下例子所示。fn并非属于对象obj的方法，但是通过call，我们将fn内部的this绑定为obj，因此就可以使用this.a访问obj的a属性了。这就是call/apply的用法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function fn() &#123;</div><div class="line">    console.log(this.a);</div><div class="line">&#125;</div><div class="line">var obj = &#123;</div><div class="line">    a: 20</div><div class="line">&#125;</div><div class="line"></div><div class="line">fn.call(obj);</div></pre></td></tr></table></figure>
+<p>而call与applay后面的参数，都是向将要执行的函数传递参数。其中call以一个一个的形式传递，apply以数组的形式传递。这是他们唯一的不同。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function fn(num1, num2) &#123;</div><div class="line">    console.log(this.a + num1 + num2);</div><div class="line">&#125;</div><div class="line">var obj = &#123;</div><div class="line">    a: 20</div><div class="line">&#125;</div><div class="line"></div><div class="line">fn.call(obj, 100, 10); // 130</div><div class="line">fn.apply(obj, [20, 10]); // 50</div></pre></td></tr></table></figure>
+<h5 id="四、构造函数与原型方法上的this"><a href="#四、构造函数与原型方法上的this" class="headerlink" title="四、构造函数与原型方法上的this"></a>四、构造函数与原型方法上的this</h5><p>在封装对象的时候，我们几乎都会用到this，但是，只有少数人搞明白了在这个过程中的this指向，就算我们理解了原型，也不一定理解了this。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">function Person(name, age) &#123;</div><div class="line"></div><div class="line">    // 这里的this指向了谁?</div><div class="line">    this.name = name;</div><div class="line">    this.age = age;   </div><div class="line">&#125;</div><div class="line"></div><div class="line">Person.prototype.getName = function() &#123;</div><div class="line"></div><div class="line">    // 这里的this又指向了谁？</div><div class="line">    return this.name;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 上面的2个this，是同一个吗，他们是否指向了原型对象？</div><div class="line"></div><div class="line">var p1 = new Person(&apos;Nick&apos;, 20);</div><div class="line">p1.getName();</div></pre></td></tr></table></figure>
+<p>我们已经知道，this，是在函数调用过程中确定，因此，搞明白new的过程中到底发生了什么就变得十分重要。</p>
+<p>通过new操作符调用构造函数，会经历以下4个阶段。</p>
+<ul>
+<li>创建一个新的对象；</li>
+<li>将构造函数的this指向这个新对象；</li>
+<li>指向构造函数的代码，为这个对象添加属性，方法等；</li>
+<li>返回新对象。</li>
+</ul>
+<p>因此，当new操作符调用构造函数时，this其实指向的是这个新创建的对象，最后又将新的对象返回出来，被实例对象p1接收。因此，我们可以说，这个时候，构造函数的this，指向了新的实例对象，p1。</p>
+<p>而原型方法上的this就好理解多了，根据上边对函数中this的定义，<code>p1.getName()</code>中的getName为调用者，他被p1所拥有，因此getName中的this，也是指向了p1。</p>
+<p>对于函数this的指向问题，有兴趣的朋友可以去看看《Javascript: The Good Part》中文译为《Javascript语言精粹》的第四章函数。里面介绍了函数的四种调用模式以及运用此种调用模式时this的指向问题。</p>
 
     
 
@@ -400,21 +429,13 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/03/31/html5一些常见的问题和解决办法/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2017/03/29/如何搭建个人博客/" id="post_nav-older" class="next-content">
+        <a href="/2017/03/31/html5一些常见的问题和解决办法/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
